@@ -1,0 +1,16 @@
+flask
+flask-caching
+functions-framework==3.*
+google-crc32c
+google-cloud-logging
+google-cloud-bigtable
+google-cloud-core
+google-cloud-secret-manager
+google-cloud-storage
+boxsdk
+boxsdk[jwt]
+firebase-admin
+jwcrypto
+pyJWT
+requests
+urllib3
