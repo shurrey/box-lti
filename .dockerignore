@@ -1,6 +1,5 @@
-.venv
-Config.py
-lti.json
+Dockerfile
+README.md
 *.pyc
 *.pyo
 *.pyd
