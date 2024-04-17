@@ -12,7 +12,7 @@ ENV PYTHONUNBUFFERED=True
 #ENV DOMAIN=localhost
 #ENV PORT=55000
 
-ENV DOMAIN=box-lti-fs2l2gquzq-uc.a.run.app/
+ENV DOMAIN=box-lti-fs2l2gquzq-uc.a.run.app
 ENV PORT=8080
 
 RUN mkdir /app
