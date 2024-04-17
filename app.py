@@ -5,7 +5,7 @@ import urllib
 import uuid
 from tempfile import mkdtemp
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, make_response
 from flask import redirect, request
 from flask_caching import Cache
 
@@ -38,7 +38,8 @@ cache = Cache(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return 200
+    response = make_response("Welcome to Box LTI!", 200)
+    return response
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
@@ -47,7 +48,7 @@ def login():
 
     location, error = login.oidc_login(request)
     if error is not None:
-        return location, error
+        return make_response(location, error)
     
     return redirect(location)
 
@@ -58,7 +59,7 @@ def launch():
     location, error = launch(request)
 
     if error is not None:
-        return location, error
+        return make_response(location, error)
     
     return redirect(location)
 
@@ -71,7 +72,7 @@ def redirect():
     return redirect(location)
 
 @app.route('/box/', methods=['HEAD', 'GET', 'POST'])
-def redirect():
+def box_endpoint():
     ar = Auth_Redirect()
 
     location = ar.auth_redirect(request)

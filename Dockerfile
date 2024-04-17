@@ -1,7 +1,7 @@
 FROM python:3.11-slim
-RUN apt-get update || : && apt-get install python -y
-RUN apt-get install python-pip -y
-RUN apt-get install -y python-dev
+RUN apt-get update || : && apt-get install python3.11 -y
+#RUN apt-get install python-pip -y
+RUN apt-get install -y python-dev-is-python3
 
 ENV PYTHONUNBUFFERED=True
 

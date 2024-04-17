@@ -11,6 +11,7 @@ boxsdk
 boxsdk[jwt]
 firebase-admin
 jwcrypto
+pycryptodome
 pyJWT
 requests
 urllib3

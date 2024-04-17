@@ -3,8 +3,7 @@ import json
 import jwk
 import jwt
 import string
-from google.cloud import logging
-from google-cloud-secret-manager import secretmanager
+from google.cloud import logging, secretmanager
 import google_crc32c
 import os
 from pprint import pformat
