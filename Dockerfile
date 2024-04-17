@@ -9,8 +9,11 @@ ENV PYTHONUNBUFFERED=True
 #ENV DOMAIN=imws.ngrok.io
 #ENV PORT=443
 
-ENV DOMAIN=localhost
-ENV PORT=55000
+#ENV DOMAIN=localhost
+#ENV PORT=55000
+
+ENV DOMAIN=box-lti-fs2l2gquzq-uc.a.run.app/
+ENV PORT=8080
 
 RUN mkdir /app
 WORKDIR /app
@@ -20,6 +23,6 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 RUN python ./keys/build_config.py
 ENV PYTHONPATH "${PYTHONPATH}:./app"
-EXPOSE 55000
+EXPOSE $PORT
 ENTRYPOINT ["./scripts/entrypoint.sh"]
 ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "wsgi:app"]
