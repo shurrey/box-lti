@@ -24,5 +24,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN python ./keys/build_config.py
 ENV PYTHONPATH "${PYTHONPATH}:./app"
 EXPOSE $PORT
-ENTRYPOINT ["./scripts/entrypoint.sh"]
-ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "wsgi:app"]
+#ENTRYPOINT ["./scripts/entrypoint.sh"]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 wsgi:app
