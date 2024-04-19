@@ -139,6 +139,6 @@ def add_header(r):
 
 if __name__ == '__main__':
     
-    port = int(os.environ.get('PORT', 55000))
+    port = int(os.environ.get('PORT', 8080))
     print(f"port {port}")
     app.run(host='0.0.0.0', port=port)
